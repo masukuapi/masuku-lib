@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books</title>
+    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+</head>
+<body>
+    <h1>Books</h1>
+    <div id="books-container">
+        {% include '_books.html' %}
+    </div>
+
+    <div id="book-details-container" hx-get="/mouse" hx-trigger="click">
+        Helo
+    </div>
+
+    <script>
+        document.body.addEventListener('click', function(event) {
+            if (event.target.matches('.book-link')) {
+                event.preventDefault();
+                htmx.ajax('GET', event.target.getAttribute('href'), '#book-details-container');
+            }
+        });
+    </script>
+</body>
+</html>
