@@ -3,6 +3,7 @@
 <head>
     <title>Books</title>
     <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
 </head>
 <body>
     <h1>Books</h1>
@@ -10,10 +11,10 @@
         {% include '_books.html' %}
     </div>
 
-    <div id="book-details-container" hx-get="/mouse" hx-trigger="click">
+    <div id="book-details-container" hx-post="/mouse" hx-trigger="click">
         Helo
     </div>
-
+    <h1 class="text-3xl text-blue-500 font-bold text-center mt-8">Welcome to Flask HTMX Tailwind App</h1>
     <script>
         document.body.addEventListener('click', function(event) {
             if (event.target.matches('.book-link')) {

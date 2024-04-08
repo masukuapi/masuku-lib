@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -30,7 +31,7 @@ def get_book(book_id):
             return render_template("_book_details.html", book=book)
         else:
             # API request, return JSON
-            return jsonify(book)
+            return jsonify(book) 
     else:
         return "Book not found", 404
 @app.route("/mouse",methods=["GET"])
