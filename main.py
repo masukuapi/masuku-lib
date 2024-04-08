@@ -1,7 +1,8 @@
-
+import subprocess
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
+app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 books = [
     {"id": 1, "title": "Book 1", "author": "Author 1"},
@@ -40,4 +41,5 @@ def mouse():
     return "Something",200
 
 if __name__ == "__main__":
+    subprocess.Popen("npx tailwindcss -i .\\static\\base.css -o .\\static\\style.css --watch", shell=True)
     app.run(debug=True)
