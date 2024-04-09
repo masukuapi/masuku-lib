@@ -1,5 +1,6 @@
 import subprocess
 from flask import Flask, render_template, request, jsonify
+import logging
 
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
@@ -13,6 +14,25 @@ books = [
 @app.route("/")
 def index():
     return render_template("index.html", books=books)
+
+@app.route("/upload", methods=["POST"])
+def upload_image():
+    logging.info('Uploading image')
+    if 'image' not in request.files:
+        print('No image part in the request')
+        return 'No image part in the request', 400
+
+    file = request.files['image']
+
+    if file.filename == '':
+        logging.error('No selected image')
+        return 'No selected image', 400
+
+    if file:
+        logging.info('Image received: ' + file.filename)
+        # Here you can save the image file and do other operations
+        # file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return 'Image received', 200
 
 @app.route("/books", methods=["GET"])
 def get_books():
