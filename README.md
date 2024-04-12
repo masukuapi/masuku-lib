@@ -1,7 +1,6 @@
+# Masuku - Face Detection ML Model
 
-# Face Detection API
-
-This is a demo web application to shocase the efficent and fast face detection model which is trained on a custom dataset, the Model is based of YoloV5.
+This is a demo web application to showcase the efficient and fast face detection model, Masuku, which is trained on a custom dataset. The Model is based off YoloV5.
 
 ## Getting Started
 

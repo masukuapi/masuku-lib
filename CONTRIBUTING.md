@@ -1,21 +1,21 @@
-# Contributing to Face Detection API Demo
+# Contributing to Masuku - Face Detection ML Model
 
 First off, thanks for taking the time to contribute!
 
-The following is a set of guidelines for contributing to Face Detection API, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+The following is a set of guidelines for contributing to Masuku, which is hosted on GitHub. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
 ## How Can I Contribute?
 
 ### Reporting Bugs
 
-This section guides you through submitting a bug report for Face Detection API. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
+This section guides you through submitting a bug report for Masuku. Following these guidelines helps maintainers and the community understand your report, reproduce the behavior, and find related reports.
 
 - Use a clear and descriptive title for the issue to identify the problem.
 - Describe the exact steps which reproduce the problem in as many details as possible.
 
 ### Suggesting Enhancements
 
-This section guides you through submitting an enhancement suggestion for Face Detection API, including completely new features and minor improvements to existing functionality.
+This section guides you through submitting an enhancement suggestion for Masuku, including completely new features and minor improvements to existing functionality.
 
 - Use a clear and descriptive title for the issue to identify the suggestion.
 - Provide a step-by-step description of the suggested enhancement in as many details as possible.
@@ -42,7 +42,3 @@ All Python must adhere to [PEP 8](https://www.python.org/dev/peps/pep-0008/).
 ### JavaScript Styleguide
 
 All JavaScript must adhere to [StandardJS](https://standardjs.com/).
-
-## Code of Conduct
-
-This project and everyone participating in it is governed by the [Face Detection API Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [email@domain.com](mailto:email@domain.com).
