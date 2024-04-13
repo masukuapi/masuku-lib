@@ -11,6 +11,7 @@ module.exports = {
         backgroundSecondary: "#111B23",
         textInactive: "#757575",
         primary: "#97C7FF",
+        secondary: "#29AC85",
         tertiary: "#000715",
       },
     },
