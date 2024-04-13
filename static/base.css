@@ -2,3 +2,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Fonts */
+
+.sato {
+  font-family: "Satoshi", sans-serif;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/static/fonts/Satoshi/Satoshi-Black.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-BlackItalic.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-Bold.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-BoldItalic.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-Italic.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-Light.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-LightItalic.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-Medium.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-MediumItalic.otf") format("opentype"),
+    url("/static/fonts/Satoshi/Satoshi-Regular.otf") format("opentype");
+}
