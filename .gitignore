@@ -3,3 +3,6 @@
 style.css
 /static/uploads/*
 !.gitkeep
+*/uploads
+/yolo*
+/__pycache__
