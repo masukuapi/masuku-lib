@@ -1,3 +1,6 @@
+![image](https://github.com/masukuapi/masuku-docs/assets/55801439/d2db1808-2394-45ba-abe9-bbd3d1281788)
+
+
 # Masuku - Face Detection ML Model
 
 Masuku is a API service that utilizes a custom trained YOLO V5 object detection model to detect human faces and determine the presence of face coverings. It provides an API which can be used for web or mobile applications. This application is intended to assist in environments where face coverings are required for safety and compliance purposes.
