@@ -1,9 +1,9 @@
 import subprocess
-from flask import Flask, render_template, request, jsonify
-from werkzeug.utils import secure_filename
+from flask import Flask, render_template, request
 import os
 import json
 import re
+from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
@@ -52,5 +52,7 @@ def upload_file():
         }        
         return syntax_highlight(json_data)
 if __name__ == "__main__":
-    subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
-    app.run(debug=True)
+    app.debug = True
+    if app.debug:
+        subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
+    app.run()

@@ -1,28 +1,17 @@
-<section class="w-[25%] h-screenWithNav bg-primary p-5">
-  <form
-    hx-encoding="multipart/form-data"
-    hx-post="/upload"
-    hx-target="#api-response"
-    hx-swap="innerHTML"
-  >
+<section class="w-[25%] h-screenWithNav bg-primary p-5 flex flex-col justify-between">
+  <form hx-encoding="multipart/form-data" hx-post="/upload" hx-target="#api-response" hx-swap="innerHTML">
     <label>
-      <img
-        src="{{ url_for('static', filename='upload.png') }}"
-        alt="Click here to upload an image."
-        class="cursor-pointer"
-      />
+      <img src="{{ url_for('static', filename='upload.png') }}" alt="Click here to upload an image."
+        class="cursor-pointer" />
       <input type="file" name="file" class="hidden" />
     </label>
     <button
-      class="text-white satoshi-regular bg-secondary px-8 py-2 rounded-full shadow-lg my-5 hover:scale-[1.05] transition-all ease-in-out duration-300 cursor-pointer"
-    >
+      class="text-textsecondary satoshi-regular bg-secondary px-8 py-2 rounded-full shadow-lg my-5 hover:scale-[1.05] transition-all ease-in-out duration-300 cursor-pointer">
       Test ✨
     </button>
   </form>
   <section>
-    <header
-      class="w-full bg-tertiary h-12 rounded-t-xl flex items-center px-4 text-white satoshi-bold"
-    >
+    <header class="w-full bg-tertiary h-12 rounded-t-xl flex items-center px-4 text-white satoshi-bold">
       API RESPONSE
     </header>
     <section class="bg-background min-h-72 w-full rounded-b-xl p-5">

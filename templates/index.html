@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Books</title>
-    <script src="https://unpkg.com/htmx.org@1.7.0"></script>
-    <link
-      href="{{ url_for('static', filename='style.css') }}"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    {% include 'components/navBar.html' %} {% include
-    'components/mainContent.html' %}
-  </body>
+
+<head>
+  <title>Masuku</title>
+  <script src="https://unpkg.com/htmx.org@1.7.0"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='logo.svg') }}" type="image/x-icon">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet" />
+</head>
+
+<body>
+  {% include 'components/navBar.html' %} {% include'components/mainContent.html' %}
+</body>
+
 </html>
