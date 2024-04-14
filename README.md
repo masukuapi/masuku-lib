@@ -1,17 +1,25 @@
 # Masuku - Face Detection ML Model
 
-This is a demo web application to showcase the efficient and fast face detection model, Masuku, which is trained on a custom dataset. The Model is based off YoloV5.
+Masuku is a API service that utilizes a custom trained YOLO V5 object detection model to detect human faces and determine the presence of face coverings. It provides an API which can be used for web or mobile applications. This application is intended to assist in environments where face coverings are required for safety and compliance purposes.
 
-## Getting Started
+The application works by capturing images in real-time using the device's camera. These images are then analyzed using the YOLO V5 object detection model to detect human faces and identify whether the face is covered, partially covered, or not covered. The application also logs detection events with timestamps and generates reports summarizing the detection events.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+A Rust version of this project is currently in development. You can follow its progress [here](<https://github.com/masukuapi/masuku-rs>).
 
-### Prerequisites
+## Features
+
+- Real-time face detection
+- Identification of face coverings
+- User-friendly interface for non-technical users
+- Reporting and logging of detection events
+
+## Prerequisites
 
 - Python 3.11+
 - Node.js
+- Docker
 
-### Installing
+## Installation
 
 1. Clone the repository:
 
@@ -19,27 +27,21 @@ These instructions will get you a copy of the project up and running on your loc
     git clone <repository-url>
     ```
 
-2. Install Python dependencies:
+2. Build the Docker image:
 
     ```sh
-    pip install -r requirements.txt
+    docker build -t masuku .
     ```
 
-3. Install Node.js dependencies:
+3. Run the Docker container:
 
     ```sh
-    npm install
-    ```
-
-4. Run the Flask application (Which also start the TailwindCSS build process):
-
-    ```sh
-    python main.py
+    docker run -p 5000:5000 masuku
     ```
 
 ## Usage
 
-Navigate to the root URL of the server. You should see a form where you can upload an image file. After uploading, the server will process the image.
+Navigate to `http://localhost:5000` on your browser. You should see a form where you can upload an image file. After uploading, the server will process the image.
 
 ## Contributing
 
@@ -47,4 +49,10 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## References
+
+- YOLO V5 Official Documentation: <https://github.com/ultralytics/yolov5>
+
+- IEEE Software Requirements Specification Standard

@@ -2,12 +2,17 @@ import subprocess
 from flask import Flask, render_template, request
 import os
 import json
+import Masuku
 import re
+import numpy as np
 from werkzeug.utils import secure_filename
 
-app = Flask(__name__)
+# Inference Model
+model = Masuku.model(os.path.join("models", "best.onnx"))
 
+# Flask App
 UPLOAD_FOLDER = './static/uploads'
+app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 def syntax_highlight(json_data):
@@ -45,12 +50,11 @@ def upload_file():
     if file:
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        #Send Req to Model
-        json_data = {
-            "status": "success",
-            "message": "File uploaded successfully"
-        }        
+        json_data = model.infer(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        print(json_data)
+        # return f"{json_data}" ,200
         return syntax_highlight(json_data)
+    
 if __name__ == "__main__":
     app.debug = True
     if app.debug:
