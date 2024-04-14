@@ -39,13 +39,13 @@ A Rust version of this project is currently in development. You can follow its p
     gunicorn -b 0.0.0.0:8000 main:app
     ```
 
-alternatively, you can run the server using the Flask development server:
+Alternatively, you can run the server using the Flask development server:
 
 ```sh
 python main.py
 ```
 
-Alternatively, you can pull the Docker image from Docker Hub and run it:
+You can also pull the Docker image from Docker Hub and run it:
 
 ```sh
 docker pull glitchyi/masuku:latest
@@ -67,5 +67,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## References
 
 - YOLO V5 Official Documentation: <https://github.com/ultralytics/yolov5>
-
-- IEEE Software Requirements Specification Standard
