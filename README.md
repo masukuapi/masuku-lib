@@ -27,7 +27,7 @@ A Rust version of this project is currently in development. You can follow its p
 1. Clone the repository:
 
     ```sh
-    git clone [<repository-url>](https://github.com/masukuapi/masuku-docs)
+    git clone https://github.com/masukuapi/masuku-docs/
     ```
 
 2. Install the required Python packages:
