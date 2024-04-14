@@ -19,7 +19,7 @@ A Rust version of this project is currently in development. You can follow its p
 - Node.js
 - Docker
 
-## Installation
+## Try it out yourself
 
 1. Clone the repository:
 
@@ -27,21 +27,34 @@ A Rust version of this project is currently in development. You can follow its p
     git clone <repository-url>
     ```
 
-2. Build the Docker image:
+2. Install the required Python packages:
 
     ```sh
-    docker build -t masuku .
+    pip install -r requirements.txt
     ```
 
-3. Run the Docker container:
+3. Run the server:
 
     ```sh
-    docker run -p 5000:5000 masuku
+    gunicorn -b 0.0.0.0:8000 main:app
     ```
+
+alternatively, you can run the server using the Flask development server:
+
+```sh
+python main.py
+```
+
+Alternatively, you can pull the Docker image from Docker Hub and run it:
+
+```sh
+docker pull glitchyi/masuku:latest
+docker run -p 8000:8000 glitchyi/masuku:latest
+```
 
 ## Usage
 
-Navigate to `http://localhost:5000` on your browser. You should see a form where you can upload an image file. After uploading, the server will process the image.
+Navigate to `http://localhost:8000` on your browser. You should see a form where you can upload an image file. After uploading, the server will process the image.
 
 ## Contributing
 
