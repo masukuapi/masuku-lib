@@ -17,7 +17,7 @@ class model:
         covered_prob = results[:, 0].max()
         not_covered_prob = results[:, 1].max()
 
-        if covered_prob > not_covered_prob:
+        if covered_prob > 0.7:
             result = "not-covered"
         else:
             result = "covered"

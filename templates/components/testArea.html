@@ -1,21 +1,49 @@
-<section class="w-[25%] h-screenWithNav bg-primary p-5 flex flex-col justify-between">
-  <form hx-encoding="multipart/form-data" hx-post="/upload" hx-target="#api-response" hx-swap="innerHTML">
+<section
+  class="w-[25%] h-screenWithNav bg-primary p-5 flex flex-col gap-10 overflow-y-scroll custom-scrollbar"
+>
+  <form
+    hx-encoding="multipart/form-data"
+    hx-post="/upload"
+    hx-target="#api-response"
+    hx-swap="innerHTML"
+  >
     <label>
-      <img src="{{ url_for('static', filename='upload.png') }}" alt="Click here to upload an image."
-        class="cursor-pointer" />
+      <img
+        src="{{ url_for('static', filename='upload.png') }}"
+        alt="Click here to upload an image."
+        class="cursor-pointer"
+      />
       <input type="file" name="file" class="hidden" />
     </label>
     <button
-      class="text-textsecondary satoshi-regular bg-secondary px-8 py-2 rounded-full shadow-lg my-5 hover:scale-[1.05] transition-all ease-in-out duration-300 cursor-pointer">
+      class="text-textsecondary satoshi-regular bg-secondary px-8 py-2 rounded-full shadow-lg mt-5 hover:scale-[1.05] transition-all ease-in-out duration-300 cursor-pointer"
+    >
       Test ✨
     </button>
   </form>
+  <img id="uploaded-image" src="" class="w-5/6 outline-none mx-auto" alt="" />
   <section>
-    <header class="w-full bg-tertiary h-12 rounded-t-xl flex items-center px-4 text-white satoshi-bold">
+    <header
+      class="w-full bg-tertiary h-12 rounded-t-xl flex items-center px-4 text-white satoshi-bold"
+    >
       API RESPONSE
     </header>
-    <section class="bg-background min-h-72 w-full rounded-b-xl p-5 flex justify-center items-center">
+    <section
+      class="bg-background min-h-60 w-full rounded-b-xl p-5 flex justify-center items-center"
+    >
       <pre><code id="api-response"></code></pre>
     </section>
   </section>
 </section>
+<script>
+  document
+    .querySelector('input[type="file"]')
+    .addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        document.querySelector("#uploaded-image").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+</script>
