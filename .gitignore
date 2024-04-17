@@ -1,6 +1,5 @@
 /env
 /node_modules
-style.css
 /static/uploads/*
 !.gitkeep
 */uploads
