@@ -1,3 +1,6 @@
+![image](https://github.com/masukuapi/masuku-docs/assets/55801439/d2db1808-2394-45ba-abe9-bbd3d1281788)
+
+
 # Masuku - Face Detection ML Model
 
 Masuku is a API service that utilizes a custom trained YOLO V5 object detection model to detect human faces and determine the presence of face coverings. It provides an API which can be used for web or mobile applications. This application is intended to assist in environments where face coverings are required for safety and compliance purposes.
@@ -24,7 +27,7 @@ A Rust version of this project is currently in development. You can follow its p
 1. Clone the repository:
 
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/masukuapi/masuku-docs/
     ```
 
 2. Install the required Python packages:
@@ -39,13 +42,13 @@ A Rust version of this project is currently in development. You can follow its p
     gunicorn -b 0.0.0.0:8000 main:app
     ```
 
-alternatively, you can run the server using the Flask development server:
+Alternatively, you can run the server using the Flask development server:
 
 ```sh
 python main.py
 ```
 
-Alternatively, you can pull the Docker image from Docker Hub and run it:
+You can also pull the Docker image from Docker Hub and run it:
 
 ```sh
 docker pull glitchyi/masuku:latest
@@ -62,10 +65,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## References
 
 - YOLO V5 Official Documentation: <https://github.com/ultralytics/yolov5>
-
-- IEEE Software Requirements Specification Standard
