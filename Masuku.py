@@ -1,29 +1,49 @@
-import numpy as np
-import onnxruntime as ort
+from numpy import expand_dims, transpose, sum, array
+from onnxruntime import InferenceSession
 from PIL import Image
+
 
 class model:
     def __init__(self, model_path) -> None:
-        self.ort_session = ort.InferenceSession(model_path)
+        self.ort_session = InferenceSession(model_path)
 
     def infer(self, image_path) -> dict:
         input_img = Image.open(image_path)
         input_img = input_img.resize((640, 640))
-        input_img = np.expand_dims(np.transpose(input_img, (2, 0, 1)), axis=0).astype(float)
+        input_img = expand_dims(transpose(input_img, (2, 0, 1)), axis=0).astype(float)
+        input_img /= 255.0
+        input_img = input_img.astype("float32")
+        output = self.ort_session.run(
+            None, {self.ort_session.get_inputs()[0].name: input_img}
+        )
 
-        input_img = input_img.astype('float32')
-        results = self.ort_session.run(None, {self.ort_session.get_inputs()[0].name: input_img})
-        results = results[0][0]
-        covered_prob = results[:, 0].max()
-        not_covered_prob = results[:, 1].max()
+        o1 = array(output)
 
-        if covered_prob > 0.7:
-            result = "not-covered"
-        else:
+   
+        outputs = output[0][0]
+   
+        # print(prob)
+        class_probabilities = output[0][0][:, -2:]
+   
+        sumN = 0
+        sumC = 0
+        for i in range(len(class_probabilities)):
+            confidence = o1[0, 0, i, 4]
+            sumC += confidence * o1[0, 0, i, 5]
+            sumN += confidence * o1[0, 0, i, 6]
+        covered_probability = sumC
+        not_covered_probability = sumN
+        # print(covered_probability, not_covered_probability)
+        if covered_probability > not_covered_probability:
             result = "covered"
+   
+        else:
+            result = "not-covered"
+   
+            # break
+        if covered_probability > not_covered_probability:
+            result = "covered"
+        else:
+            result = "not-covered"
 
-        return {
-            "result": result,
-            "not_covered_probability": int(not_covered_prob),
-            "covered_probability": int(covered_prob)
-        }
+        return {"result": result, "covered_probability": covered_probability, "not_covered_probability": not_covered_probability}

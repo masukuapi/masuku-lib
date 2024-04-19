@@ -8,7 +8,7 @@ import numpy as np
 from werkzeug.utils import secure_filename
 
 # Inference Model
-model = Masuku.model(os.path.join("models", "best.onnx"))
+model = Masuku.model(os.path.join("models", "newbest.onnx"))
 
 # Flask App
 UPLOAD_FOLDER = './static/uploads'
@@ -57,6 +57,6 @@ def upload_file():
     
 if __name__ == "__main__":
     app.debug = True
-    if app.debug:
-        subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
+    # if app.debug:
+        # subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
     app.run()
