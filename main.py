@@ -57,6 +57,6 @@ def upload_file():
     
 if __name__ == "__main__":
     app.debug = True
-    # if app.debug:
-        # subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
+    if app.debug:
+        subprocess.Popen("npx tailwindcss -i ./static/base.css -o ./static/style.css --watch", shell=True)
     app.run()

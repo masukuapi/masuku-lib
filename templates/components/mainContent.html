@@ -1,5 +1,9 @@
 <main class="flex">
   {% include 'components/quickLinks.html' %}
-  {% include 'components/apiDoc.html'%} 
-  {% include 'components/testArea.html' %}
+  <span class="hidden md:block w-[55%] ">
+    {% include 'components/apiDoc.html'%} 
+  </span>
+  <div class=" hidden md:block">
+    {% include 'components/testArea.html' %}
+  </div>
 </main>
