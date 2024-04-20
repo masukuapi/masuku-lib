@@ -4,8 +4,8 @@ import os
 import json
 import Masuku
 import re
-import numpy as np
 from werkzeug.utils import secure_filename
+from flasgger import Swagger
 
 # Inference Model
 model = Masuku.model(os.path.join("models", "newbest.onnx"))
@@ -14,6 +14,8 @@ model = Masuku.model(os.path.join("models", "newbest.onnx"))
 UPLOAD_FOLDER = './static/uploads'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+swagger = Swagger(app)
 
 def syntax_highlight(json_data):
     json_str = json.dumps(json_data, indent=2)
@@ -38,10 +40,30 @@ def syntax_highlight(json_data):
 
 @app.route("/")
 def index():
+    """
+    Home Page
+    ---
+    responses:
+      200:
+        description: The home page is returned
+    """
     return render_template("index.html")
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
+    """
+    File Upload
+    ---
+    parameters:
+      - in: formData
+        name: file
+        type: file
+        required: true
+        description: The file to upload
+    responses:
+      200:
+        description: The result of the file processing
+    """
     if 'file' not in request.files:
         return 'No file part'
     file = request.files['file']

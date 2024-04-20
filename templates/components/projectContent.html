@@ -1,0 +1,107 @@
+<section
+  class="h-screenWithNav bg-backgroundSecondary text-white p-10 satoshi-medium overflow-y-scroll custom-scrollbar">
+  <section>
+    <h1 class="text-3xl pb-5 satoshi-bold">Introduction</h1>
+    <hr class="bg-textInactive" />
+    <p class="pt-7 text-lg">
+      The Masuku API is a cutting-edge solution that leverages the power of the YOLO V5 object detection model to detect
+      human faces and determine the presence of face coverings. This innovative API is designed to assist organizations
+      in
+      enforcing face covering policies and ensuring compliance in various settings where such measures are mandated for
+      safety and public health reasons.
+    </p>
+
+  </section>
+  <section>
+    <h1 class="text-3xl py-6  satoshi-bold">Working</h1>
+    <hr class="bg-textInactive" />
+    <p class="pt-7 text-lg">
+      The Masuku API provides a user-friendly interface that allows seamless integration with various applications
+      and systems. It accepts image inputs via HTTP POST requests and supports commonly used image formats such as
+      JPEG and PNG. Utilizing the state-of-the-art YOLO V5 model, the API analyzes the provided images to detect human
+      faces and identify whether they are covered, partially covered, or uncovered by masks or other face coverings.
+      Upon processing the input, the Masuku API generates a structured JSON response, indicating the face covering
+      status along with associated confidence scores or probabilities. This valuable information can be seamlessly
+      integrated into existing systems or applications, enabling real-time monitoring and
+      enforcement of face covering policies.
+    </p>
+
+  </section>
+
+  <section>
+    <h1 class="text-3xl py-6 satoshi-bold">Getting Started</h1>
+    <hr class="bg-textInactive" />
+    <p class="pt-7 pb-2 text-lg">System Requirements:</p>
+    <ul class="list-disc list-inside flex flex-col gap-2 ">
+      <li>Supports CPUs on Windows 8.1+, Linux, and macOS with acceleration libraries like MLAS, MKL-DNN, MKL-ML</li>
+      <li>For NVIDIA GPUs, supports CUDA 10.0, cuDNN 7.3 (some Linux Python needs CUDA 10.1, cuDNN 7.6), Kepler and
+        newer GPUs</li>
+      <li>Has execution provider for AMD GPUs with ROCm</li>
+      <li>On Windows, DirectML needs DirectX 12 capable GPUs like NVIDIA Kepler+, AMD GCN 1st Gen+, Intel Haswell+
+        integrated</li>
+      <li>Has providers for Intel OpenVINO, ARM Compute Library, Rockchip NPU, Xilinx Vitis-AI, Huawei CANN, Qualcomm
+        QNN</li>
+    </ul>
+  </section>
+
+  <section>
+    <h1 class="text-3xl py-5 satoshi-bold">Installation</h1>
+    <hr class="bg-textInactive" />
+    <ul class="list-decimal list-inside flex flex-col gap-2 pt-7">
+      <li>
+        Clone the repository:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          git clone https://github.com/masukuapi/masuku-docs
+        </code>
+      </li>
+      <li>
+
+        <span> </span>Install dependencies:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          pip install -r requirements.txt 
+        </code>
+      </li>
+      <li>
+        Run the main python file:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          python main.py
+        </code>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1 class="text-3xl py-5 satoshi-bold">Running the API (using Docker)</h1>
+    <hr class="bg-textInactive" />
+    <ul class="list-decimal list-inside flex flex-col gap-2 pt-7">
+      <li>
+        Clone the repository:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          git clone https://github.com/masukuapi/masuku-docs
+        </code>
+      </li>
+      <li>
+
+        <span> </span>Build the docker image:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          docker build . -t masuku-api:latest
+        </code>
+      </li>
+      <li>
+        Run the docker container:
+        <code class="rounded-xl bg-slate-800 p-[5px] px-3">
+          docker run -p 8000:8000 masuku-api
+        </code>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h1 class="text-3xl py-5 satoshi-bold">API Documentation</h1>
+    <hr class="bg-textInactive" />
+    <p class="mt-2 pt-6">
+      To see the full API specification for request/response formats you can make use of the swagger
+      API documentation available <a class="text-secondary" href="/apidocs">here</a>.
+    </p>
+  </section>
+</section>
