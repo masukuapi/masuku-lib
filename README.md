@@ -1,5 +1,6 @@
 ![image](https://github.com/masukuapi/masuku-docs/assets/55801439/d2db1808-2394-45ba-abe9-bbd3d1281788)
 
+[![Docker Image CI](https://github.com/masukuapi/masuku-docs/actions/workflows/docker-build.yaml/badge.svg)](https://github.com/masukuapi/masuku-docs/actions/workflows/docker-build.yaml)
 
 # Masuku - Face Detection ML Model
 
