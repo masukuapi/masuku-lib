@@ -44,4 +44,4 @@ class model:
         else:
             result = "not-covered"
 
-        return {"result": result, "covered_probability": covered_probability, "not_covered_probability": not_covered_probability}
+        return {"result": result, "covered_score": round(covered_probability,6) , "not_covered_score": round(not_covered_probability,6)}
