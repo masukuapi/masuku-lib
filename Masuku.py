@@ -19,10 +19,12 @@ class model:
         input_img = expand_dims(transpose(input_img, (2, 0, 1)), axis=0).astype(float)
         input_img /= 255.0
         input_img = input_img.astype("float32")
+        try:
+            output = self.ort_session.run(None, {self.ort_session.get_inputs()[0].name: input_img})   
+        except:
+            return {"result": "failed to get a result"}
+           
         
-        output = self.ort_session.run(
-            None, {self.ort_session.get_inputs()[0].name: input_img}
-        )
 
         output = array(output)
         sum_cov, sum_ncov= 0, 0
